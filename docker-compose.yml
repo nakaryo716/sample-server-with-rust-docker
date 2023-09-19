@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  rust:
+    image: rust:latest
+    volumes:
+      - .:/home/app
+    working_dir: /home/app
+    ports:
+      - "3000:3000"
+    tty: true
+    environment:
+      - USER=USER
+    command: cargo run
